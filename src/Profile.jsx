@@ -29,8 +29,8 @@ function Profile() {
     e.preventDefault();
     console.log("submit");
     user = { ...user, ...formData }; // merge new changes into user details & save back into context
-    saveUser(user);
-    setUser(user); // save new profile info in localStorage too
+    saveUser(user); // save new profile info in localStorage too
+    setUser(user);
     JoblyApi.modUserProfile(user.username, user.token, formData);
     setMessage("Submitted.");
     // nice future enchancement to make msg go away after some time (~ 15sec.)

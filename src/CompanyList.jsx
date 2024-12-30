@@ -11,7 +11,7 @@ function CompanyList() {
     JoblyApi.fetchCompanies(searchTerm).then((companies) =>
       setCompanies(companies)
     );
-  }, [searchTerm]); // if searchTerm edited, go get new list of companies (incremental search) - don't wait for submit button
+  }, [searchTerm]); // if searchTerm edited, go get new list of companies (incremental search) - don't wait for a submit button
 
   const handleChange = (e) => {
     e.preventDefault();

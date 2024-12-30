@@ -14,7 +14,7 @@ function CompanyDetail() {
   useEffect(() => {
     JoblyApi.getCompany(handle).then((company) => setCompany(company));
     JoblyApi.fetchUser(user.username, user.token).then(({ user }) => {
-      console.log("appls: ", user.applications);
+      // console.log("appls: ", user.applications);
       setAppliedJobs(() => user.applications);
     });
   }, []);
@@ -32,9 +32,9 @@ function CompanyDetail() {
           <ul className="joblist-ul">
             {company.jobs.map((job) => {
               const applied = appliedJobs.includes(job.id);
-              if (applied) {
-                console.log("already applied to ", job.id);
-              }
+              // if (applied) {
+              //   console.log("already applied to ", job.id);
+              // }
               return (
                 <li className="joblist-li" key={job.id}>
                   <JobCard job={job} applied={applied} />
